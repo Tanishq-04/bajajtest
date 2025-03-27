@@ -71,7 +71,7 @@ def find_absent_students():
     return cursor.fetchall()  
 
 def validate_emails(absence_data):
-    messages = []
+    s = []
     
     for student_id, total_absent_days in absence_data:
         cursor.execute(f'''
@@ -85,10 +85,10 @@ def validate_emails(absence_data):
             parent_email, student_name = student_info
             
             if '@' in parent_email and '.' in parent_email:
-                message = f'Dear Parent, your child {student_name} was absent for {total_absent_days} days. Please ensure their attendance improves.'
-                messages.append((student_id, message))
+                 = f'Dear Parent, your child {student_name} was absent for {total_absent_days} days. Please ensure their attendance improves.'
+                s.append((student_id, ))
     
-    return messages
+    return s
 
 def run():
     path = r'C:\Users\Admin\Desktop\test\data - sample.xlsx'  
